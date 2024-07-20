@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     min-height: 100vh;
+     background: rgb(65,129,185);
+    background: radial-gradient(circle, rgb(73, 79, 84) 0%, rgba(30,31,32,1) 100%);
+}
+.container{
+    position: reletive;
+  
+    background: rgb(43, 109, 153);
+    background: radial-gradient(circle, rgb(73, 79, 84) 0%, rgba(30,31,32,1) 100%);  
+    border-radius: 20px;
+    border-top-left-radius: 230px;
+    border-top-right-radius: 230px;
+    box-shadow: 10px 50px 78px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(0,0,0,0.2),
+    inset -5px -5px 17px rgba(0,0,0,0.78);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.clock{
+    position: relative;
+    width: 460px;
+    height: 460px;
+    background: #27313bd2;
+    background: rgb(43, 109, 153);
+    background: radial-gradient(circle, rgb(73, 79, 84) 0%, rgba(30,31,32,1) 100%); 
+    border-radius: 50%;
+
+    box-shadow: 10px 50px 78px rgba(0,0,0 ,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(0,0,0,0.2),
+    inset -5px -5px 17px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+
+}
+.clock::before{
+  
+ position: absolute;
+ width: 8px;
+ height: 8px;
+ background: #ffffff;
+ border-radius: 8px solid white;
+ border-radius: 50%;
+ z-index: 100000;
+}
+.clock span{
+    position: absolute;
+    inset: 20px;
+    color: rgb(247, 247, 247);
+    text-align:center ;
+    transform: rotate( calc(30deg* var(--i)));
+}
+.clock span b{
+    font-size:2rem ;
+    opacity: 0.25;
+    font-weight: 600;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    transform: rotate(calc(-30deg* var(--i)));
+}
+.circle{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+
+}
+.circle i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background:var(--clr);
+    border-radius: 2px;
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+ 
+}
+
+circle:nth-child(1) i{
+    width: 2px;
+}
+circle:nth-child(2) i{
+    width: 6px;
+}
+
+
+.circle2{
+    width: 240px;
+    height: 240px;
+    z-index: 9;
+}
+
+.circle3{
+    width: 180px;
+    height: 180px;
+    z-index: 8;
+}
+  
+.circle::before{
+
+    content: '';
+    position: absolute;
+    top: -8.5px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),
+    0 0 60px var(--clr);
+}
+
+#time{
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border: 2px solid black ;
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255,255,255, 0.25),
+    inset -5px -5px 20px rgba(37, 36, 36, 0.25);
+
+}
+#time div{
+    position: relative;
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr);
+}
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after{
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+#time div:last-child{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color:rgb(255, 255, 255);
+}
